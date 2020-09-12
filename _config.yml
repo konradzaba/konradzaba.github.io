@@ -85,6 +85,11 @@ footer:
       url: "https://github.com/konradzaba"
 
 
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "konrad-zaba-personal-site"
+
 defaults:
   # _posts
   - scope:
