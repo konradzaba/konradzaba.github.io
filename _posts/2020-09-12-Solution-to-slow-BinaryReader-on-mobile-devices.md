@@ -1,5 +1,5 @@
 ---
-title: "Fix to slow BinaryReader on mobile devices"
+title: "Solution to slow BinaryReader on mobile devices"
 date: 2020-09-12 13:33:00 +0100
 categories:
   - blog
