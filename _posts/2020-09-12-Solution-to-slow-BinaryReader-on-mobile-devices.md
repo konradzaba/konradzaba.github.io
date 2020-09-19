@@ -33,7 +33,7 @@ private void PerformBinaryReading(Stream fs)
 
 The binary file itself was relatively small (3MB) and on my PC it took around a single second to read it, while [on a quite decent](https://www.gsmarena.com/sony_xperia_xa1-8596.php) (spec-wise) Android phone it took a whooping **17** seconds.
 
-First, let's think why it happended. When we are using a BinaryReader and doing a lot of seeking back and forth in the bytes, the file is continuously accessed (locked and unlocked) from the storage. For a modern PC equipped with fast Ryzen CPU and NVMe SSD this is not a big deal, but for a mobile device this is real problem.
+First, let's think why it happened. When we are using a BinaryReader and doing a lot of seeking back and forth in the bytes, the file is continuously accessed (locked and unlocked) from the storage. For a modern PC equipped with fast Ryzen CPU and NVMe SSD this is not a big deal, but for a mobile device this is real problem.
 
 The trick to solve this problem is to read quickly the whole file into RAM in a single burst and then use the BinaryReader without any changes, so this does not involve to much work codewise.  To do so, read the file into a byte array and then pass this byte array to the MemoryStream.
 
@@ -70,5 +70,5 @@ private void PerformBinaryReading(Stream fs)
 	//...
 }
 ```
-What happended is I read all the bytes to memory. Then, I created a MemoryStream with these bytes and BinaryReader instance to read bytes from the MemoryStream (essentially RAM).
+What happened is I read all the bytes to memory. Then, I created a MemoryStream with these bytes and BinaryReader instance to read bytes from the MemoryStream (essentially RAM).
 And as a result in my case, the performance on mobile device improved from 17 seconds to around 2 seconds.
