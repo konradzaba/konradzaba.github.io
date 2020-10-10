@@ -62,14 +62,10 @@ author:
   avatar : "/assets/images/bio-photo-me.jpg"
   linkedin : konrad-zaba
   facebook: konrad213
-  #twitter: konrad_zaba
+  twitter: konrad_zaba
   location: "Warsaw, Poland"
-  bio    : "Software development: web and GIS professionally, gamedev and mobiles in spare time."
+  bio    : "Software development: web & GIS professionally, gamedev on mobiles and some weird stuff in spare time."
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://konradzaba.pl"
-
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/konradzaba"
