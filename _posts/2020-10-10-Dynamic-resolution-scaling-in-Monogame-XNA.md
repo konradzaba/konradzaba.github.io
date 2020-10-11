@@ -15,29 +15,29 @@ tags:
   - pc
 ---
 
-Dynamic resolution scaling (DRS) is a functionality used to deliver a better frame rate in 3D rendering at cost of resolution. At moments which are taxing to render, the resolution is automatically dropped to improve performance. When the time needed to render becomes shorter, the resolution is increased back to native. Potentially, it can be used also for dynamic supersampling. If DRS is new to you, I suggest to view the excellent video by Digital Foundry given below.
+Dynamic resolution scaling (DRS) is a functionality used to deliver a better frame rate in 3D rendering at cost of resolution. At moments which are taxing to render, the resolution is automatically dropped to improve performance. When the time needed to render the scene becomes shorter, the resolution is increased back to native. Potentially, it can be used also for dynamic supersampling. If DRS is new to you, I suggest to view the excellent video by Digital Foundry given below.
 
 <iframe src="https://www.youtube.com/embed/180nuQJccTA" width="560" height="315" frameborder="0"> </iframe>
 
-To implement this functionality you need have a basic experience with using RenderTargets. Even though I implemented DRS in MonoGame/XNA, the concept itself and thus this tutorial can be easily used for other frameworks too.
+To implement this functionality you need to have a basic experience with using RenderTargets. Even though I implemented DRS in MonoGame/XNA, the concept itself and thus this tutorial can be easily used with other frameworks too.
 
 
-I implemented this technique in a small game I did together with my friend some time ago. It is free and it has no ads, so if you have Android phone feel free to check it and see by yourself how the DRS performs: [Vorn's Adventure](https://play.google.com/store/apps/details?id=com.konradzaba.VornsAdventure)
+I implemented this technique in a small game I did together with my friend some time ago. It is free and it has no ads, so if you have Android phone please feel free to check it and see by yourself how the DRS performs: [Vorn's Adventure](https://play.google.com/store/apps/details?id=com.konradzaba.VornsAdventure)
 
 First, let’s analyze how DRS works and what are the downsides coming from its implementation.
 At first, the game starts with native resolution equal to `1280x720`.
 
 ![DRS:1280x720]({{ site.url }}/images/2020-10-10-drs/drs01.png){: .align-center}
 
-Then, after a while, when new and taxing area becomes visible, it goes down to intermediate `1227x691`.
+Then, after a while, when new and taxing area becomes visible, it goes down to intermediate `1227x691` resolution.
 
 ![DRS:1227x691]({{ site.url }}/images/2020-10-10-drs/drs02.png){: .align-center}
 
-Now, the camera spans over a huge area which is very taxing. The water renders reflections, hence some models are rendered more than once. Hence, the resolution goes to lowest possible equal to `534x300` to keep reasonable performance.
+Now, the camera spans over a huge area which is very taxing. The water renders reflections, hence some models are rendered more than once. Therefore, the resolution goes to lowest possible equal to `534x300` to keep reasonable performance.
 
 ![DRS:534x300]({{ site.url }}/images/2020-10-10-drs/drs03.png){: .align-center}
 
-The next scene is less taxing to draw. These is a smaller number of complex models, albeit the reflections are still drawn. The resolution improves to `628x354`.
+The next scene is less taxing to draw. There is a smaller number of complex models, albeit the reflections are still drawn. The resolution improves to `628x354`.
 
 ![DRS:628x354]({{ site.url }}/images/2020-10-10-drs/drs04.png){: .align-center}
 
