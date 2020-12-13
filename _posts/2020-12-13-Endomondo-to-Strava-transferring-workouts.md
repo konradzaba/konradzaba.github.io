@@ -24,7 +24,7 @@ Before starting let’s see all the unfortunate caveats – Strava API in free m
 
 * A limit of 100 requests per 15 minutes
 * A limit of 1000 requests per 24 hours
-* OAuth 2.0 access token, that you need to manually renew after reaching every limit including the 15 minutes one (I don’t know if it applies also to paid version)
+* OAuth 2.0 access token, that you need to manually renew after reaching every limit including the 100 requests per 15 minutes one (I don’t know if it applies also to paid version)
 
 So it is not going to be a smooth experience, but still I think it is worth a try.
 The prerequisites are:
@@ -57,7 +57,7 @@ The first step is to register an application with Strava API. Thankfully, this i
 Take note of two graphs: _Daily requests_ and _Requests every 15 minutes_. These will be useful as it is the only viable way to track how close you are to Strava API's limits.
 
 When it comes to my application I provide both the [source code](https://github.com/konradzaba/endomondo-to-strava) as well as [ executable](https://github.com/konradzaba/endomondo-to-strava/releases/download/v1.0/Release_ver1.7z). If you don’t know a thing about programming, head for the executable.
-At the first start, the application will prompt for the `ClientID`, `ClientSecret` and path to the folder with _TCX_ files. These values will be saved in a config file, so with the next run you won’t need to provide these. 
+At the first start, the application will prompt for the `ClientID`, `ClientSecret` and path to the folder with _TCX_ files. These values will be saved in a config file, so with the next run you won’t need to provide these. Both the `ClientID` and `ClientSecret` were mentioned before and you can get them from [Strava website](https://www.strava.com/settings/api).
 
 With each start, you need to provide an _authentication code_. The application will open automatically your web browser and connect to the following address _https://www.strava.com/oauth/mobile/authorize?client_id=ClientId&redirect_uri=http%3A%2F%2Flocalhost&response_type=code&approval_prompt=auto&scope=activity%3Awrite%2Cread&state=test_
 
