@@ -23,7 +23,7 @@ First let’s see what the non-automated possibilities are. The data from Endomo
 Before starting let’s see all the unfortunate caveats – Strava API in free mode has:
 
 * A limit of 100 requests per 15 minutes
-* A limit of 1000 requests per 24 hours
+* A limit of 1000 requests per 24 hours (resets at midnight UTC)
 * OAuth 2.0 access token, that you need to manually renew after reaching every limit including the 100 requests per 15 minutes one (I don’t know if it applies also to paid version)
 
 So it is not going to be a smooth experience, but still I think it is worth a try.
