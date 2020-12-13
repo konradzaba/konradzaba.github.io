@@ -74,7 +74,8 @@ Please copy it and provide in the prompt asking for the authentication code.
 ![Strava - create an app6]({{ site.url }}/images/2020-12-13-strava/api6.png){: .align-center}
 
 And that’s it, you’re done! 
-The application should work correctly, just remember the usage limits for Strava API. 
+The application should work correctly, just remember about the usage limits for Strava API. If nothing is happening or files stopped being uploaded, most probably you just reached the free API limits. You can check this by looking at graphs visible on [Strava website](https://www.strava.com/settings/api).
+
 Additionally, one thing I noticed – unfortunately, some data from Endomondo is malformed – the application returns errors when trying to upload this data. I gathered all those files and tried to add them via Strava UI with the following result:
 
 ![Strava - create an app7]({{ site.url }}/images/2020-12-13-strava/api7.png){: .align-center}
