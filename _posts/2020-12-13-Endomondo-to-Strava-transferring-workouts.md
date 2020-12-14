@@ -31,7 +31,7 @@ The prerequisites are:
 
 * Strava account
 * Data from Endomondo unpacked in some location (in other words, a bunch of TCX files that you want to import)
-* Optional: Very basic knowledge of C# + Visual Studio or Visual Studio Code
+* Optional if you want to play with source code: Basic knowledge of C# + Visual Studio or Visual Studio Code
 
 The first step is to register an application with Strava API. Thankfully, this is a quick and nice process:
 ## 1)	Go to [https://www.strava.com/settings/api](https://www.strava.com/settings/api)
@@ -56,7 +56,7 @@ The first step is to register an application with Strava API. Thankfully, this i
 {: .notice--danger}
 Take note of two graphs: _Daily requests_ and _Requests every 15 minutes_. These will be useful as it is the only viable way to track how close you are to Strava API's limits.
 
-When it comes to my application I provide both the [source code](https://github.com/konradzaba/endomondo-to-strava) as well as [ executable](https://github.com/konradzaba/endomondo-to-strava/releases/download/v1.0/Release_ver1.7z). If you don’t know a thing about programming, head for the executable.
+When it comes to my application I provide both the [source code](https://github.com/konradzaba/endomondo-to-strava) as well as [ executable](https://github.com/konradzaba/endomondo-to-strava/releases/download/v1.1/Release_ver1_1.7z). If you don’t know a thing about programming, head for the executable.
 At the first start, the application will prompt for the `ClientID`, `ClientSecret` and path to the folder with _TCX_ files. These values will be saved in a config file, so with the next run you won’t need to provide these. Both the `ClientID` and `ClientSecret` were mentioned before and you can get them from [Strava website](https://www.strava.com/settings/api).
 
 With each start, you need to provide an _authentication code_. The application will open automatically your web browser and connect to the following address _https://www.strava.com/oauth/mobile/authorize?client_id=ClientId&redirect_uri=http%3A%2F%2Flocalhost&response_type=code&approval_prompt=auto&scope=activity%3Awrite%2Cread&state=test_
@@ -84,3 +84,5 @@ So it seems, these are just duplicates that can be safely omitted – I just del
 Hopefully my code and application helps you a bit!
 
 This post was inspired by [the article](https://medium.com/@kamil.burczyk/exporting-your-activities-from-endomondo-to-strava-682c23391041).
+
+Update: Added new release with 15 minutes autoretry functionality. Not tested too much though, as all my activities are now in Strava :)
