@@ -86,3 +86,5 @@ Hopefully my code and application helps you a bit!
 This post was inspired by [the article](https://medium.com/@kamil.burczyk/exporting-your-activities-from-endomondo-to-strava-682c23391041).
 
 Update: Added new release with 15 minutes autoretry functionality. Not tested too much though, as all my activities are now in Strava :)
+
+![Strava - results]({{ site.url }}/images/2020-12-13-strava/stravaFinal.png){: .align-center}
