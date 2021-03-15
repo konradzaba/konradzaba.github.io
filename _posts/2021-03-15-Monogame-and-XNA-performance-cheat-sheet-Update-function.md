@@ -18,6 +18,8 @@ tags:
 ---
 This is the second blog post in the MonoGame & XNA performance cheat sheet collection. I received some comments concerning the first part on twitter and I updated that entry – thank you for all your suggestions. So without further ado, this post will concern the possibilities for performance improvements in the `Update()` function. All these possibilities were used in my small game that you can check right here [Vorn's Adventure](https://play.google.com/store/apps/details?id=com.konradzaba.VornsAdventure). It’s a non-profit game: free with no ads.
 
+![Vorn]({{ site.url }}/images/vorn.jpg){: .align-center}
+
 ## 1) Desynchronized threads
 
 
@@ -28,10 +30,10 @@ An interesting idea for slow CPU cores is using desynchronized threads. The idea
 In my particular case, model animation was a huge bottleneck. So I’m using a MilkShape model with some very old C# code found on the [CodeProject](https://www.codeproject.com/Articles/148034/Loading-and-rendering-Milkshape-3d-models-with-ani) to update the animations. The model animation itself is a totally separate topic, needless to say professionally this should be performed with vertex shaders for correct performance. Nevertheless, the code is what it is and I have to use it for animating my model. The problem is, when the animations are performed on CPU, these take a lot of time – often more than 33ms on slowest mobile cores. As a result:
 
 •	Doing this task on a main thread is completely out of question as it would consume all the resources for `Update()` function.
-![DRS:1280x720]({{ site.url }}/images/2021-03-15-perf2/desync1.png){: .align-center}
+![main thread]({{ site.url }}/images/2021-03-15-perf2/desync1.png){: .align-center}
 
 •	Doing this task on a separate thread with synchronization would still make our game run below 30 FPS as we are exceeding the budget of 33 ms on many devices.
-![DRS:1280x720]({{ site.url }}/images/2021-03-15-perf2/desync2.png){: .align-center}
+![anim thread]({{ site.url }}/images/2021-03-15-perf2/desync2.png){: .align-center}
 
 What to do in such case? My idea is to desynchronize the update thread for animation from the drawing. This will not cause any performance degradation (hitches) as simply the same animation pose will repeat for a more than a single frame. On the faster devices with variable CPU clocks the issue most likely won’t be very visible for the user. On the slowest devices (aforementioned phone with 1.2 Ghz CPU cores) the animation may appear “slow-mo”  but the game will be still playable for the user.
 
