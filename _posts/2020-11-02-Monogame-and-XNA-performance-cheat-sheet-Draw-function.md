@@ -110,7 +110,7 @@ foreach (LevelTile tile in tilesToDraw)
 ```
 
 Assuming that in our [PVS](https://en.wikipedia.org/wiki/Potentially_visible_set) there are around 20 tiles to be displayed horizontally everywhere and there are 50 rows of tiles vertically, this means that there are in total 1000 elements in `tilesToDraw` collection. In other words, there are 1000 draw calls necessary to render the visible floor solely. The performance was so bad that the rendering on a mobile device was in practice a slideshow. Given that each tile is composed of two triangles, only 2000 triangles are drawn.
-To solve this problem, I verified that in all those tiles, there only 27 textures used. Basing on the screen given above, the following textures are displayed for floor.
+To solve this problem, I verified that in all those tiles, there only 27 textures used. Based on the screen given above, the following textures are displayed for floor.
 ![Textures used in first area]({{ site.url }}/images\2020-11-02-perf/textures.png){: .align-center}
 So, given the fact that all other parameters do not change, it is best to group the tiles by textures so that only as many draw calls are necessary as textures are to be rendered. Now instead of `2` triangles, `N*2` are drawn in each draw call. As a result, the function `DrawFloor()` is called only 27 times and the performance is improved many times. If you are interested in details for the functions, please let me know in the comments below and I will share them.
 An observant reader may notice that this can be improved even more – if tiles with the same texture are neighbors, then these can be merged into less triangles. I tried this approach in code, but with small number of triangles that made no sense and the code was really cluttered.
