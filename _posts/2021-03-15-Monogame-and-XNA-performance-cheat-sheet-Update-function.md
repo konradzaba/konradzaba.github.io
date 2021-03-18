@@ -160,17 +160,18 @@ Don’t forget to check the `Optimize code` setting and uncheck `Prefer 32-bit` 
 | SONY XA1          | Cortex A-53 2.3 Ghz   | False                | 137          | 72          |
 |-----------------------------------------------------------------------------------------------|
 | PC (terminal)     | Sempron 2100+ (1 Ghz) | False                | 566          | 91          |
-| Laptop            | i7-3632QM             | True                 | 171          | 13          |
-| Laptop            | i5-4210M              | True                 | 153          | 13          |
-| PC                | i5-8400               | True                 | 122          | 10          |
-| Laptop            | i7-9850H              | True                 | 112          | 9           |
-| PC                | Ryzen 3900x           | True                 | 127          | 7           |
+| Laptop            | i7-3632QM (3.2 Ghz)   | True                 | 171          | 13          |
+| Laptop            | i5-4210M (3.2 Ghz)    | True                 | 153          | 13          |
+| PC                | i5-8400 (2.8 Ghz)     | True                 | 122          | 10          |
+| Laptop            | i7-9850H (4.6 Ghz)    | True                 | 112          | 9           |
+| PC                | Ryzen 3900X (3.8 Ghz) | True                 | 127          | 7           |
 |===============================================================================================|
 
 
 One important thing, the code on PC and Laptop is not running via Xamarin, so we are comparing here apples to oranges.
 Sadly SIMD instructions are not supported now on Android devices. No idea how these behave on iOS. Still as you can see, there are some quite significant performance benefits available.
 
+Just for fun I compiled the same code for x86 and .NET 4.0 to run it on my first laptop equipped with P3 700 Mhz. The results are respectively 592 ms and 456 ms :)
 
 ## 4) Pre-calculate or cache whatever possible
 This one is quite obvious and does not come with any code sample, but I still think that is worth to mention. Try to look at the logic of your code from some distance. Both the `Draw()` and `Update()` functions are the focal point of the application. If there is a possibility to pre-calculate something – do it, export the results and reuse them in game. If it is possible to cache something – cache it, no matter if you’re coding for a phone, console or PC, there’s a lot of RAM to use on current devices.
