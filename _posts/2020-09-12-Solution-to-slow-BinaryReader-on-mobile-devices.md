@@ -72,3 +72,5 @@ private void PerformBinaryReading(Stream fs)
 ```
 What happened is I read all the bytes to memory. Then, I created a MemoryStream with these bytes and BinaryReader instance to read bytes from the MemoryStream (essentially RAM).
 And as a result in my case, the performance on mobile device improved from 17 seconds to around 2 seconds.
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fkonradzaba.github.io%2Fblog%2Ftech%2FSolution-to-slow-BinaryReader-on-mobile-devices%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)

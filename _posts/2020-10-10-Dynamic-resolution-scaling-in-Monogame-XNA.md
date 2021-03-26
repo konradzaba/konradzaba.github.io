@@ -74,3 +74,5 @@ currentResolutionScaleRatio += delta;
 ```
 
 The `currentResolutionScaleRatio` shall be then applied to the RenderTarget that is used for rendering. Please note, you must first dispose the already existing RenderTarget and allocate the new one. This obviously has additional penalty on CPU performance, albeit in my tests it proven to be small enough that I can allow to reallocate 4 RenderTargets when using deferred rendering. I believe it can be eventually mitigated by using ViewPorts.
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fkonradzaba.github.io%2Fblog%2Ftech%2FDynamic-resolution-scaling-in-Monogame-XNA%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)

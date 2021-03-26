@@ -127,3 +127,5 @@ It is a bad idea to create new `SpriteBatch` objects in each frame. I will cite 
 This one is nicely discussed in Riemers tutorials so without unnecessary copy-pasting, just visit this [page](https://github.com/simondarksidej/XNAGameStudio/wiki/Riemers3DXNA1Terrain13buffers).
 
 The next post will concern improvements for `Update()` function, and the last post in the series will address common practices for both `Draw()` and `Update()`. Please feel encouraged to comment this post and share your findings related to performance. I also recommend you to check my small game [Vorn's Adventure](https://play.google.com/store/apps/details?id=com.konradzaba.VornsAdventure) where I implemented all techniques mentioned in this article.
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fkonradzaba.github.io%2Fblog%2Ftech%2FMonogame-and-XNA-performance-cheat-sheet-Draw-function%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)

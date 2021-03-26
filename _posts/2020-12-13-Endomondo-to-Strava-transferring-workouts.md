@@ -88,3 +88,5 @@ This post was inspired by [the article](https://medium.com/@kamil.burczyk/export
 Update: Added new release with 15 minutes autoretry functionality. Not tested too much though, as all my activities are now in Strava :)
 
 ![Strava - results]({{ site.url }}/images/2020-12-13-strava/stravaFinal.png){: .align-center}
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fkonradzaba.github.io%2Fblog%2Ftech%2FEndomondo-to-Strava-transferring-workouts%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)

@@ -16,6 +16,7 @@ tags:
   - android
   - pc
 ---
+
 This is the second blog post in the MonoGame & XNA performance cheat sheet collection. I received some comments concerning the first part on twitter and I updated that entry – thank you for all your suggestions. So without further ado, this post will concern the possibilities for performance improvements in the `Update()` function. All these possibilities were used in my small game that you can check right here [Vorn's Adventure](https://play.google.com/store/apps/details?id=com.konradzaba.VornsAdventure). It’s a non-profit game: free with no ads.
 
 ![Vorn]({{ site.url }}/images/vorn.jpg){: .align-center}
@@ -166,7 +167,7 @@ Don’t forget to check the `Optimize code` setting and uncheck `Prefer 32-bit` 
 | PC                | i5-8400 (2.8 Ghz)           | True                 | 122          | 10          |
 | Laptop            | i7-9850H (4.6 Ghz)          | True                 | 112          | 9           |
 | PC                | Ryzen 3900X (3.8 Ghz)       | True                 | 127          | 7           |
-|===============================================================================================|
+|=====================================================================================================|
 
 
 One important thing, the code on PC and Laptop is not running via Xamarin, so we are comparing here apples to oranges.
@@ -179,3 +180,4 @@ This one is quite obvious and does not come with any code sample, but I still th
 
 The next post will concern some low-level optimizations and best practices for both `Draw()` and `Update()` functions. Please feel encouraged to comment this post and share your findings related to performance. I also recommend you to check my small game [Vorn's Adventure](https://play.google.com/store/apps/details?id=com.konradzaba.VornsAdventure) where I implemented all techniques mentioned in this article.
 
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fkonradzaba.github.io%2Fblog%2Ftech%2FMonogame-and-XNA-performance-cheat-sheet-Update-function%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
