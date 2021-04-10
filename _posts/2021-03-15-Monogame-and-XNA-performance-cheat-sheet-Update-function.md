@@ -173,7 +173,16 @@ Don’t forget to check the `Optimize code` setting and uncheck `Prefer 32-bit` 
 One important thing, the code on PC and Laptop is not running via Xamarin, so we are comparing here apples to oranges.
 Sadly SIMD instructions are not supported now on Android devices. No idea how these behave on iOS. Still as you can see, there are some quite significant performance benefits available.
 
-Just for fun I compiled the same code for x86 and .NET 4.0 to run it on my first laptop equipped with P3 700 Mhz. The results are respectively 592 ms and 456 ms :)
+Just for fun I compiled the same code for x86 and ran with 32-bits and no SIMD acceleration on some, well, less capable systems ;)
+
+| 32-bit, No SIMD   | CPU Core                    | .NET Framework       | Standard (ms)| Faster (ms) |
+|:------------------|:---------------------------:|---------------------:|:------------:|------------:|
+| Laptop            | Pentium 3 700 Mhz Mobile    | 4.0                  | 592          | 456         |
+| Laptop            | Pentium M 735 (1.7 Ghz)     | 4.7                  | 215          | 45          |
+|=====================================================================================================|
+
+A side note: no doubts why Intel left P4 and NetBurst, instead evolving Pentium M to C2D ;)
+
 
 ## 4) Pre-calculate or cache whatever possible
 This one is quite obvious and does not come with any code sample, but I still think that is worth to mention. Try to look at the logic of your code from some distance. Both the `Draw()` and `Update()` functions are the focal point of the application. If there is a possibility to pre-calculate something – do it, export the results and reuse them in game. If it is possible to cache something – cache it, no matter if you’re coding for a phone, console or PC, there’s a lot of RAM to use on current devices.

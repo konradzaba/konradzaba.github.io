@@ -25,7 +25,7 @@ One important thing to understand is that it is necessary to profile before appl
 One unfortunate fact that comes from some optimizations is less readable code. Regrettably, writing clean nice code often works against achieving good performance. My approach towards this problem is: optimize only where necessary. That’s why apart from `Draw()` and `Update()` functions, I try to refrain from unnecessary optimizing. I prefer to have a cleaner code than to get a fraction of second where it is not necessary. When discussing each possibility, I will provide information when and if it should be used.
 So, without further ado, this first post will concern `Draw()` calls. The second post will touch `Update()` calls, and the last one some common good practices as well as lower level optimizations.
 
-## 1) Use EffectParameters to set parameters for drawing
+## 1) Use EffectTechnique and EffectParameters to set parameters for drawing
 In vast majority of XNA and MonoGame tutorials, you will notice that the parameters for drawing are set by using strings. As a result such code is quite common:
 
 ```c#
@@ -44,6 +44,7 @@ public void Draw()
 While this code works perfectly well and it is suitable for tutorials, it is not a good practice to pass the drawing parameters by string. This has a significant penalty on CPU performance. Therefore, this code shall be refactored:
 
 ```c# 
+private EffectTechnique _coloredTechnique;
 private EffectParameter _viewParameter;
 private EffectParameter _projectionParameter;
 private EffectParameter _worldParameter;
@@ -51,6 +52,7 @@ private EffectParameter _ambientLightPowerParameter;
 
 private void InitEffectParameters()
 {
+	_coloredTechnique = _effect.Techniques[“Colored”];
 	_viewParameter = _effect.Parameters["xView"];
 	_projectionParameter = _effect.Parameters["xProjection"];
 	_worldParameter = _effect.Parameters["xWorld"];	
@@ -59,7 +61,7 @@ private void InitEffectParameters()
 
 public void Draw()
 {
-	_effect.CurrentTechnique = _effect.Techniques[“Colored”];
+	_effect.CurrentTechnique = _coloredTechnique;
 	_viewParameter.SetValue(_viewMatrix);
 	_projectionParameter.SetValue(_projectionMatrix);
 	_worldParameter.SetValue(_worldMatrix);
@@ -69,7 +71,7 @@ public void Draw()
 }
 ```
 
-From my experience, usage of `EffectParameters` improves the CPU time necessary for drawing significantly - in my case, the total time spent for drawing decreased by up to 15%. I suggest using the `EffectParameters` everywhere instead of parameters passed by strings. It is possible to use the `Parameters` indexed property on `Effect` to access any effect parameter, but this is slower than using `EffectParameters`. Creating and assigning an `EffectParameter` instance for each technique is therefore a good practice.
+From my experience, usage of `EffectTechnique` and `EffectParameters` improves the CPU time necessary for drawing significantly - in my case, the total time spent for drawing decreased by up to 20%. I suggest using the `EffectParameters` everywhere instead of parameters passed by strings. It is possible to use the `Parameters` indexed property on `Effect` to access any effect parameter, but this is slower than using `EffectParameters`. Creating and assigning an `EffectParameter` instance for each technique is therefore a good practice.
 
 ## 2) Caching of EffectParameters
 From my experience, only the parameters that are changed are sent to GPU when an effect pass is applied. Therefore, if some parameters do not need to be updated these should not be set in the draw call as this consumes unnecessarily the CPU time. Let’s consider the previous example and assume that the `_ambientLightPower` is a constant parameter. This allows to cache this parameter and remove the unnecessary `SetValue` call.
@@ -77,7 +79,7 @@ From my experience, only the parameters that are changed are sent to GPU when an
 ```c#
 public void Draw(bool done = false)
 {
-	_effect.CurrentTechnique = _effect.Techniques[“Colored”];
+	_effect.CurrentTechnique = _coloredTechnique;
 	_viewParameter.SetValue(_viewMatrix);
 	_projectionParameter.SetValue(_projectionMatrix);
 	_worldParameter.SetValue(_worldMatrix);
