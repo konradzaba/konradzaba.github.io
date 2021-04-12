@@ -155,30 +155,34 @@ private void Benchmark()
 Don’t forget to check the `Optimize code` setting and uncheck `Prefer 32-bit` – these are necessary for SIMD optimizations to work. The test gives the following results:
 
 
-|                   | CPU Core                    | Is SIMD accelerated? | Standard (ms)| Faster (ms) |
+| Android           | CPU Core                    | Is SIMD accelerated? | Standard (ms)| Faster (ms) |
 |:------------------|:---------------------------:|---------------------:|:------------:|------------:|
 | Samsung GT-I8190N | Cortex-A9 1.0 Ghz           | False                | 334          | 166         |
 | Samsung A3 2014   | Cortex A-53 1.2 Ghz         | False                | 228          | 137         |
 | SONY XA1          | Cortex A-53 2.3 Ghz         | False                | 137          | 72          |
-|-----------------------------------------------------------------------------------------------------|
-| PC (terminal)     | Sempron 2100+ (1 Ghz)       | False                | 566          | 91          |
+| Samsung A71       | Kryo 470 Gold 2.2 GHz       | False                | 32           | 20          |
+|=====================================================================================================|
+
+| PC                | CPU Core                    | Is SIMD accelerated? | Standard (ms)| Faster (ms) |
+|:------------------|:---------------------------:|---------------------:|:------------:|------------:|
+| Desktop (terminal)| Sempron 2100+ (1 Ghz)       | False                | 566          | 91          |
 | Laptop            | i7-3632QM (3.2 Ghz)         | True                 | 171          | 13          |
 | Laptop            | i5-4210M (3.2 Ghz)          | True                 | 153          | 13          |
-| PC                | i5-8400 (2.8 Ghz)           | True                 | 122          | 10          |
+| Desktop           | i5-8400 (2.8 Ghz)           | True                 | 122          | 10          |
 | Laptop            | i7-9850H (4.6 Ghz)          | True                 | 112          | 9           |
-| PC                | Ryzen 3900X (3.8 Ghz)       | True                 | 127          | 7           |
+| Desktop           | Ryzen 3900X (3.8 Ghz)       | True                 | 127          | 7           |
 |=====================================================================================================|
 
 
-One important thing, the code on PC and Laptop is not running via Xamarin, so we are comparing here apples to oranges.
+One important thing, the code on PC is not running via Xamarin, so we are comparing here apples to oranges. Xamarin clearly provides some optimizations to standard code which are not present when it is executed on Windows.
 Sadly SIMD instructions are not supported now on Android devices. No idea how these behave on iOS. Still as you can see, there are some quite significant performance benefits available.
 
 Just for fun I compiled the same code for x86 and ran with 32-bits and no SIMD acceleration on some, well, less capable systems ;)
 
 | 32-bit, No SIMD   | CPU Core                    | .NET Framework       | Standard (ms)| Faster (ms) |
 |:------------------|:---------------------------:|---------------------:|:------------:|------------:|
-| Laptop            | Pentium 3 700 Mhz Mobile    | 4.0                  | 592          | 456         |
-| Laptop            | Pentium M 735 (1.7 Ghz)     | 4.7                  | 215          | 45          |
+| Laptop            | Pentium 3 700 Mhz Mobile    | 4.0 (Windows XP)     | 592          | 456         |
+| Laptop            | Pentium M 735 (1.7 Ghz)     | 4.7 (Windows 7)      | 215          | 45          |
 |=====================================================================================================|
 
 A side note: no doubts why Intel left P4 and NetBurst, instead evolving Pentium M to C2D ;)
