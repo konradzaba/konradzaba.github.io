@@ -193,4 +193,6 @@ This one is quite obvious and does not come with any code sample, but I still th
 
 The next post will concern some low-level optimizations and best practices for both `Draw()` and `Update()` functions. Please feel encouraged to comment this post and share your findings related to performance. I also recommend you to check my small game [Vorn's Adventure](https://play.google.com/store/apps/details?id=com.konradzaba.VornsAdventure) where I implemented all techniques mentioned in this article.
 
+Part 1 concerning the `Draw()` function is [here](https://konradzaba.github.io/blog/tech/Monogame-and-XNA-performance-cheat-sheet-Draw-function/).
+
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fkonradzaba.github.io%2Fblog%2Ftech%2FMonogame-and-XNA-performance-cheat-sheet-Update-function%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
