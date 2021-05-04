@@ -166,8 +166,8 @@ Don’t forget to check the `Optimize code` setting and uncheck `Prefer 32-bit` 
 | PC                | CPU Core                    | Is SIMD accelerated? | Standard (ms)| Faster (ms) |
 |:------------------|:---------------------------:|---------------------:|:------------:|------------:|
 | Desktop (terminal)| Sempron 2100+ (1 Ghz)       | False                | 566          | 91          |
-| Laptop            | i7-3632QM (3.2 Ghz)         | True                 | 171          | 13          |
 | Laptop            | i5-4210M (3.2 Ghz)          | True                 | 153          | 13          |
+| Laptop            | i7-3632QM (3.2 Ghz)         | True                 | 158          | 12          |
 | Desktop           | i5-8400 (2.8 Ghz)           | True                 | 122          | 10          |
 | Laptop            | i7-9850H (4.6 Ghz)          | True                 | 112          | 9           |
 | Desktop           | Ryzen 3900X (3.8 Ghz)       | True                 | 127          | 7           |
