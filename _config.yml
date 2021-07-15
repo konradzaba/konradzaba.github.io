@@ -70,6 +70,10 @@ author:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/konradzaba"
 
+head_scripts:
+  - https://code.jquery.com/jquery-3.3.1.min.js
+  - /assets/js/night.js
+
 footer:
   links:
     - label: "Website"

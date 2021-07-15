@@ -7,6 +7,119 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
+$white: #fff;
+$white-025: #393939;
+$white-050: #3d3d3d;
+$white-075: #404345;
+$white-100: #4a4e51;
+$white-150: #555a5e;
+$white-200: #697075;
+$white-300: #7d848d;
+$white-350: #959ca3;
+$white-400: #9fa6ad;
+$white-500: #acb2b8;
+$white-600: #c4c8cc;
+$white-700: #cfd2d6;
+$white-750: #dadee0;
+$white-800: #e7e8eb;
+$white-900: #f2f2f3;
+
+$navy: #2f3437;
+
+html {
+  transition: all 0.1s;
+
+  body,
+  .page__footer,
+  .page__title {
+    transition: all 0.1s;
+  }
+
+  &.dark {
+    background-color: $navy;
+    color: $white-500;
+
+    body,
+    .page__footer {
+      background-color: $navy;
+      color: $white-500;
+    }
+	
+	.greedy-nav {
+		background-color: $navy;
+	}
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $white-800;
+    }
+
+    .archive__item-title,
+    .page__title {
+      color: $white-800;
+    }
+
+    .page__meta {
+      color: $white-400;
+    }
+    .archive__item-description {
+      color: $white-700;
+    }
+
+    .author__urls.is--visible {
+      color: $white-050;
+    }
+
+    .author__bio {
+      color: $white-900;
+    }
+
+    .page__content {
+      strong {
+        color: $white-800;
+      }
+
+      u {
+        border-color: $white-800;
+      }
+
+      .project-content {
+        .project-title {
+          color: $white-800;
+        }
+
+        .project-date {
+          color: $white-600;
+        }
+      }
+    }
+
+    p > code,
+    a > code,
+    li > code,
+    figcaption > code,
+    td > code {
+      color: $white-050;
+    }
+
+    .social-icons {
+      .fa-map-marker,
+      .fa-codepen,
+      .fa-github {
+        color: $white-500;
+      }
+    }
+
+    .pagination--pager {
+      color: $white-750;
+    }
+  }
+}
+
 .page__content {
   font-size: $type-size-6;
 }
