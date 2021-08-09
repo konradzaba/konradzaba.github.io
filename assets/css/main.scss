@@ -45,6 +45,12 @@ html {
       color: $white-500;
     }
 	
+	.page__title {
+		a {
+			color: $white-900;
+		}
+	}
+	
 	.greedy-nav {
 		background-color: $navy;
 	}

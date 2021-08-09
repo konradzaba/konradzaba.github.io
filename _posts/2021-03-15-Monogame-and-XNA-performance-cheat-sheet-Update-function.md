@@ -17,7 +17,7 @@ tags:
   - pc
 ---
 
-This is the second blog post in the MonoGame & XNA performance cheat sheet collection. I received some comments concerning the first part on twitter and I updated that entry – thank you for all your suggestions. So without further ado, this post will concern the possibilities for performance improvements in the `Update()` function. All these possibilities were used in my small game that you can check right here [Vorn's Adventure](https://play.google.com/store/apps/details?id=com.konradzaba.VornsAdventure). It’s a non-profit game: free with no ads.
+This is the second blog post in the MonoGame & XNA performance cheat sheet collection. I received some comments concerning the first part on twitter and I updated that entry – thank you for all your suggestions that I received on Twitter. So without further ado, this post will concern the possibilities for performance improvements in the `Update()` function. All these possibilities were used in my small game that you can check right here [Vorn's Adventure](https://play.google.com/store/apps/details?id=com.konradzaba.VornsAdventure). It’s a non-profit game: free with no ads.
 
 ![Vorn]({{ site.url }}/images/vorn.jpg){: .align-center}
 
