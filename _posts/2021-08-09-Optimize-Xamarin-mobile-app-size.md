@@ -10,25 +10,24 @@ tags:
   - xamarin
   - monogame
   - android
-  - iphone
 ---
 
-The major issues of mobile apps especially those built with Xamarin are the app sizes. There is still a plethora of users with low-end devices having very small storage. Most users switch their phones to newer ones only if their old one stops working or has dead battery (even if it can be replaced). When your Android phone has only 8 or 16 GB of available internal storage, the app size becomes a significant concern. Basically, if your app is too large, the users will not bother installing it, as they would perhaps need to remove other application. Let’s be fair – no one will remove an app that serves productivity to install your app just for entertainment. Another aspect is purely psychological – if your app weights 100 MB it is less likely to be downloaded than the one being 99 MB large. This comes from the same reasoning as the [.99 price tag](https://www.simon-kucher.com/pl/blog/why-prices-end-99-and-other-psychological-pricing-tactics).
+The major issues of mobile apps built with Xamarin are the app sizes. There is still a plethora of users with low-end devices having very small storage. Most users switch their phones to newer ones only if their old one stops working or has a dead battery (even if it can be replaced). When your Android phone has only 8 or 16 GB of available internal storage, the app size becomes a significant concern. Basically, if your app is too large, the users will not bother installing it, as they would perhaps need to remove other application(s). Let’s be fair – no one will remove an app that serves productivity to install your app e.g. just for entertainment. Another aspect is purely psychological – if your app weights 100 MB it is less likely to be downloaded than the one being of 99 MB size. This comes from the same reasoning as the [.99 price tag](https://www.simon-kucher.com/pl/blog/why-prices-end-99-and-other-psychological-pricing-tactics).
 
-So this article concerns Xamarin and MonoGame (with Xamarin) applications for Android. First, before diving into specifics we need to establish how we can analyze the app size. You need to prepare a Release archive for the application and use Android Studio. Start Android Studio, then from the menu choose `Build` and `Analyze APK`. Point the file browser to your AAB (or APK) file, and let it analyze the size. The `Download Size` metric is the one that should interest you the most:
+So this article concerns Xamarin as well as MonoGame (with Xamarin) applications for Android. First, before diving into specifics we need to establish how we can analyze the app size. You need to prepare a Release archive for the application and download and install Android Studio. Start Android Studio, then from the menu choose `Build` and `Analyze APK`. Point the file browser to your AAB (or APK) file, and let it analyze the size. The `Download Size` metric is the one that should interest you the most:
 
 ![Vorn]({{ site.url }}/images/2021-08-09-xamarinSize/apk-size.png){: .align-center}
 
-You can easily expand the tree list and find the candidates for size optimization. So now, some ideas on what can you do to make your app smaller. First the ones that can be applied to all Xamarin.Android applications.
+You can easily expand the tree list and find the candidates for size optimization. So now, some ideas on what can you do to make your app actually smaller. First the ones that can be applied to all Xamarin.Android applications.
 
 
 ## 1)	Start using AAB app bundles
 
-Google introduced the app bundles to generate and serve optimized APKs for each user’s device configuration, so that they can download only what they need to actually run the application. Hence, what the end users get is smaller and more optimized downloads.
+Google introduced the app bundles to generate and serve optimized APKs for each user’s device configuration, so that they can download only what they actually need to run the application. Hence, what the end users get are smaller and more optimized downloads.
 
 ![Vorn]({{ site.url }}/images/2021-08-09-xamarinSize/aab.jpg){: .align-center}
 
-I suggest that you should move your existing apps to AABs as soon as possible. Google itself won’t even allow submitting new application in old APK format starting with August 2021. To build Xamarin apps as AABs, you need at least Visual Studio 2019 in version 16.4. 
+I suggest that you should move your existing apps to AABs as soon as possible. Google itself won’t even allow submitting new applications in old APK format starting with August 2021. To build Xamarin apps as AABs, you need at least Visual Studio 2019 in version 16.4. 
 
 ![Vorn]({{ site.url }}/images/2021-08-09-xamarinSize/aab2.png){: .align-center}
 
