@@ -51,7 +51,7 @@ Basically, the middle option should be enabled when you want unused assemblies t
 Obviously, Android can be found on a plethora of devices with very different screen densities. In API Level 19 (Android 4.4) and higher, the following densities are supported: `ldpi`, `mdpi`, `tvdpi`, `hdpi`, `xhdpi`, `xxhdpi` and xxxhdpi. The thing is, you don’t need to export assets to each density. If there is small number of users with specific densities, it is worth to consider whether it makes sense to bundle those densities. What is important is that if you won’t include resources for specific screen densities, Android will automatically scale the existing resources for the other dependencies. If you won’t mind having scaled images, you can just prepare a single variant of an image for your app.
 
 
-The following suggestions will be more specific to MonoGame development with Xamarin.
+**The following suggestions will be more specific to MonoGame development with Xamarin.**
 
 ## 5) Manually compress the music files
 Before the last release, I decided to bump up the texture resolution in my game from 128x128 to 256x256 to achieve more clarity on newer high resolution devices. Coincidentally, the app size went up by around 15 MB reaching well over 100 MBs. After using the aforementioned app size analyzer, it became clear that the music compressed with MonoGame Pipeline Tool took around 23 MB – and that’s a lot! So, I started analyzing the outputs from the pipeline tool and playing with some manual optimizations – I managed to shrink the music size to 13 MB what I consider a nice result.
