@@ -3,6 +3,7 @@ title: "Endomondo to Strava: transferring workouts"
 date: 2020-12-13 21:10:00 +0100
 header:
   image: assets/images/header-workout.jpg
+classes: wide
 categories:
   - blog
   - tech
@@ -17,6 +18,9 @@ I planned to continue with my performance tips and tricks coverage for MonoGame,
 
 The whole fiasco concerning closure of Endomondo and all the shenanigans with getting personal data from them is honestly worth a separate blog post. Here however, I want to discuss what matters. After a short review of different possibilities I decided to create an account at Strava and start using their app. Obviously, now I wanted to see all my archived data from Endomondo present in Strava.
 First let’s see what the non-automated possibilities are. The data from Endomondo came in an archive with whooping _1266 files (710 MB+)_: each workout has two files, a _JSON_ file and a _TCX_ file. Fortunately, _TCX_ files are [standardized XML files](https://en.wikipedia.org/wiki/Training_Center_XML) which are supported by Strava. However this also means that I need to upload a not too shabby 633 files to have all my workouts there. Bad news: using Strava UI, you can upload only 25 files at once. While certainly doable in my case, some may have thousands of workouts and may spend **A LOT** of time manually uploading everything. So, time to try at least partially automating the whole process.
+Whole code is hosted on GitHub at separate repository:
+<div class="github-card" data-github="konradzaba/endomondo-to-strava" data-width="100%" data-height="" data-theme="default"></div>
+<script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
 
 ![Endomondo to Strava]({{ site.url }}/images/2020-12-13-strava/endo2strava.png){: .align-center}
 

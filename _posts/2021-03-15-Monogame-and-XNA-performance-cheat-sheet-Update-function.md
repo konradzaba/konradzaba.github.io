@@ -3,6 +3,7 @@ title: "MonoGame and XNA performance cheat sheet: Update function"
 date: 2021-03-15 18:10:00 +0100
 header:
   image: assets/images/clocks.jpg
+classes: wide
 categories:
   - blog
   - tech

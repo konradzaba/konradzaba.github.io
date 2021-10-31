@@ -3,6 +3,8 @@ title: "Optimize Xamarin mobile app sizes"
 date: 2021-08-09 12:10:00 +0100
 header:
   image: assets/images/header-phones.jpg
+#classes: wide
+toc: true
 categories:
   - blog
   - tech

@@ -1,6 +1,7 @@
 ---
 title: "Dynamic resolution scaling in Monogame/XNA"
 date: 2020-10-10 10:10:00 +0100
+classes: wide
 categories:
   - blog
   - tech

@@ -3,6 +3,7 @@ title: "MonoGame and XNA performance cheat sheet: Draw function"
 date: 2020-11-02 18:10:00 +0100
 header:
   image: assets/images/clocks.jpg
+classes: wide
 categories:
   - blog
   - tech
