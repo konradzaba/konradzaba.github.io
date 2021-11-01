@@ -1,6 +1,6 @@
 ---
 title: "MonoGame and XNA performance cheat sheet: low level optimizations"
-date: 2021-10-31 10:10:00 +0100
+date: 2021-11-01 10:10:00 +0100
 #classes: wide
 toc: true
 header:
@@ -19,11 +19,11 @@ tags:
   - pc
 ---
 
-The last blog post (at least for now) concerning MonoGame performance deals with some general do’s and don’ts as well as a few techniques for low level optimization. These are applicable both to `Update()` and `Draw()` functions. Remember that these functions are executed in a loop dozens of times per second. That is a very different use case than other code portions. Please remember that you should never use low level optimization prematurely as it will occlude your source code. Unfortunately, highest performance possible does not get along with clear code. Always aim for a high quality design – make the code nice, modular and easily modifiable. Only when it’s complete and correct, check the performance – do not optimize until you know you need to. Hence, I will clearly mention below if I consider given technique being low level optimization. Some of the techniques given below might be blatantly obvious, however I still want to mention them as it is possible to forget even the easiest thing.
+The last blog post (at least for now) concerning MonoGame performance deals with some general do’s and don’ts as well as a few techniques for low level optimization. These are applicable both to `Update()` and `Draw()` functions. Remember that these functions are executed in a loop dozens of times per second. That is a very different use case than other code portions. Please remember that you should never use low level optimization prematurely as it will occlude your source code. Unfortunately, highest performance possible sometimes does not get along with clear code. Always aim for a high quality design – make the code nice, modular and easily modifiable. Only when it’s complete and correct, check the performance – do not optimize until you know you need to. Hence, I will clearly mention below if I consider given technique being low level optimization. Some of the techniques given below might be blatantly obvious, however I still want to mention them as in the heat of coding one may forget even the easiest thing.
 
 ## 1) Do not allocate unnecessary objects in loops
 
-This one may be very simple but please do remember that creating new objects in a loop inside functions such `Draw()` or `Update()` which are executed up to 60 times a second is an obvious performance hog. Not only it is slower, but it will force Garbage Collector to perform cleanup more often.
+This one may be very simple but please do remember that creating new objects in a loop inside functions such `Draw()` or `Update()` which are executed up to 60 times a second is an obvious performance hog. Not only it is slower, but it will force Garbage Collector to perform cleanup more often. This results in stuttering at seemingly random moments.
 The following code was creating severe hiccups in my case:
 
 ```c#
@@ -69,7 +69,7 @@ The Release configuration optimizes the source code. By default the code optimiz
  
  ![Release screen]({{ site.url }}/images\2021-31-10-perf3/release.png){: .align-center}
 
-I was quite shocked when I heard from a senior developer that there are no differences between Debug and Release builds in Visual Studio. That’s not true. The code optimization will make your C# code a bit faster.
+I was quite shocked when I heard from a senior developer that there are no differences between Debug and Release builds in Visual Studio. That’s not true. The code optimization **will** make your C# code a bit faster.
 
 
 
@@ -146,7 +146,7 @@ This particular tip comes from the Sgt. Conker website that is sadly no longer t
 ## 5) Variables vs properties
 **Halt! This one is a very low level optimization. Never use it if there are other low hanging fruits and never apply it to whole source code. Use wisely only if you have a CPU performance issue.**
 
-The properties are great for readability and maintainability where performance isn’t of much concern. When coding for a PC you will almost certainly never run into an issue coming from properties. The story might be different if you are aiming for other devices, i.e. couple years old Android phones where every cycle will count on poor Cortex A-53. This is due to the fact, that properties are roughly equivalent to a JIT method call which takes some time to execute.
+The properties are great for readability and maintainability where performance isn’t of much concern. When coding for a PC you will almost certainly never run into an issue coming from properties. The story might be different if you are aiming for other devices, i.e. couple years old Android phones where every cycle will count on poor Cortex A-53. This is due to the fact, that properties are roughly equivalent to a JIT method call which takes some time to execute. If you have a property that is very often accessed many times in many loops you can get a few miliseconds by converting it to a variable.
 
 ## 6) Do not use try-catch if unnecessary
 If for any reason you happen to use try-catch clause in a loop in `Draw()` or `Update()` function, try to avoid it if possible. There is a small overhead created even if no exception is raised. While in usual code this overhead is absolutely insignificant, it may slow down your code quite significantly if it is called in a loop.
