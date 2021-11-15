@@ -34,6 +34,9 @@ html {
   .page__title {
     transition: all 0.1s;
   }
+  
+  .light__toggle { margin-left: 1rem; margin-right: 1rem; height: 2rem; border: 0; outline: none; color: #6f777d; background-color: transparent; cursor: pointer; -webkit-transition: 0.2s; transition: 0.2s; }
+  .light__toggle:hover { color: #53595e; }
 
   &.dark {
     background-color: $navy;
