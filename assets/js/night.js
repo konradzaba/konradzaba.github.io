@@ -14,12 +14,25 @@ var DarkMode = (function() {
   }
 
   function init() {
+	debugger
     var html = document.getElementsByTagName('html')[0].classList
-    if (isDark()) {
-      html.add(DARK_CLASS)
+	
+	if(sessionStorage.getItem('darkTheme') == null){
+		isDark() ? sessionStorage.setItem('darkTheme','true') : sessionStorage.setItem('darkTheme','false');
+	}
+
+	if (sessionStorage.getItem('darkTheme')=='false') {
+      html.remove(DARK_CLASS)
     }
+	
+	if (sessionStorage.getItem('darkTheme')=='true') {
+		html.add(DARK_CLASS)
+	}
+	else{
+		html.remove(DARK_CLASS)
+	}
     watch(function(isDarkMode) {
-      isDarkMode ? html.add(DARK_CLASS) : html.remove(DARK_CLASS)
+      isDarkMode ? html.add(DARK_CLASS) : html.remove(DARK_CLASS);
     })
   }
 
