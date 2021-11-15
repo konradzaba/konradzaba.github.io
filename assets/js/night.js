@@ -14,7 +14,6 @@ var DarkMode = (function() {
   }
 
   function init() {
-	debugger
     var html = document.getElementsByTagName('html')[0].classList
 	
 	if(sessionStorage.getItem('darkTheme') == null){
