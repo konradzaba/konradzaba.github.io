@@ -24,7 +24,7 @@
           <i class="fas fa-search"></i>
         </button>
         {% endif %}
-		<button class="light__toggle" type="button" id="makeLightButton" onclick="if(sessionStorage.getItem('darkTheme')=='true'){sessionStorage.setItem('darkTheme','false');document.getElementsByTagName('html')[0].classList.remove('dark')}else{sessionStorage.setItem('darkTheme','true');document.getElementsByTagName('html')[0].classList.add('dark')}">
+		<button class="light__toggle" type="button" id="makeLightButton" onclick="if(localStorage.getItem('darkTheme')=='true'){localStorage.setItem('darkTheme','false');document.getElementsByTagName('html')[0].classList.remove('dark')}else{localStorage.setItem('darkTheme','true');document.getElementsByTagName('html')[0].classList.add('dark')}">
 		  <span class="visually-hidden">{{ default: "Toggle light" }}</span>
 		  <i class="fa fa-lightbulb"></i>
 		</button>

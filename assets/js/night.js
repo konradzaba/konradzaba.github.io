@@ -16,15 +16,15 @@ var DarkMode = (function() {
   function init() {
     var html = document.getElementsByTagName('html')[0].classList
 	
-	if(sessionStorage.getItem('darkTheme') == null){
-		isDark() ? sessionStorage.setItem('darkTheme','true') : sessionStorage.setItem('darkTheme','false');
+	if(localStorage.getItem('darkTheme') == null){
+		isDark() ? localStorage.setItem('darkTheme','true') : localStorage.setItem('darkTheme','false');
 	}
 
-	if (sessionStorage.getItem('darkTheme')=='false') {
+	if (localStorage.getItem('darkTheme')=='false') {
       html.remove(DARK_CLASS)
     }
 	
-	if (sessionStorage.getItem('darkTheme')=='true') {
+	if (localStorage.getItem('darkTheme')=='true') {
 		html.add(DARK_CLASS)
 	}
 	else{
