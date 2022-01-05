@@ -21,7 +21,7 @@ $white-500: #acb2b8;
 $white-600: #c4c8cc;
 $white-700: #cfd2d6;
 $white-750: #dadee0;
-$white-800: #e7e8eb;
+$white-800: #e6e8ea;
 $white-900: #f2f2f3;
 
 $navy: #2f3437;
@@ -40,12 +40,12 @@ html {
 
   &.dark {
     background-color: $navy;
-    color: $white-500;
+    color: $white-800;
 
     body,
     .page__footer {
       background-color: $navy;
-      color: $white-500;
+      color: $white-800;
     }
 	
 	.page__title {
@@ -119,7 +119,7 @@ html {
       .fa-map-marker,
       .fa-codepen,
       .fa-github {
-        color: $white-500;
+        color: $white-800;
       }
     }
 
