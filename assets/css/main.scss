@@ -58,6 +58,12 @@ html {
 		background-color: $navy;
 	}
 
+  .greedy-nav {
+    a {
+      color: $white-500;
+    }
+  }
+
     h1,
     h2,
     h3,
@@ -80,7 +86,7 @@ html {
     }
 
     .author__urls.is--visible {
-      color: $white-050;
+      color: $white-200;
     }
 
     .author__bio {
