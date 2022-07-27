@@ -1,5 +1,5 @@
 ---
-title: "MonoGame and .NET6 migration: global usings"
+title: "MonoGame 3.8.1 and .NET6 migration: global usings"
 date: 2022-07-27 08:10:00 +0100
 #classes: wide
 header:
