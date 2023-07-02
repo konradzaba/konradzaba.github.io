@@ -231,15 +231,13 @@ figure {
   color: #fff;
 }
 
-.fh5co-cover .display-tc h2 {
-  color: #fff;
-  font-size: 80px;
-  margin-bottom: 30px;
-  font-weight: 300 !important;
-}
-
-.not-so-bold {
-	font-weight: 500;
+/*this one magically resolves problems with jumpting to headers*/
+[id]::before {
+  content: '';
+  display: block;
+  height:      75px;
+  margin-top: -75px;
+  visibility: hidden;
 }
 
 .fh5co-cover .display-tc h2 strong {
