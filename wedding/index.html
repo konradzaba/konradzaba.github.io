@@ -73,6 +73,11 @@
 					<!-- START #fh5co-menu-wrap -->
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li><a href="#intro">Intro</a></li>
+							<li><a href="#venue">Venue</a></li>
+							<li><a href="">Schedule</a></li>
+							<li><a href="">RSVP</a></li>
+							<li><a href="">Travel</a></li>
 							<li class="active"><a href="index.html" >English</a></li>
 							<li><a href="index-pl.html" onclick="localStorage.setItem('itemClicked', 'true')">Polski</a></li>
 							<!--<li>
@@ -97,7 +102,7 @@
 		<!-- end:header-top -->
 		
 		<div id="fh5co-couple" class="fh5co-section-gray">
-			<div class="container">
+			<div class="container" id="intro">
 		<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
 						<h2>We Are Getting Married</h2>
@@ -157,7 +162,7 @@
 		
 		<div id="fh5co-when-where" class="fh5co-section-gray">
 			<div class="container">
-				<div class="row">
+				<div class="row" id="venue">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
 						<h2>When &amp; Where</h2>
 					</div>
@@ -267,13 +272,13 @@
 	<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>-->
 	<!-- jQuery -->
 	<script>
-		if(localStorage.getItem('itemClicked') !== 'true'){
+		/*if(localStorage.getItem('itemClicked') !== 'true'){
 			var language = navigator.language || navigator.browserLanguage;
 			if (language.indexOf('pl') > -1) 
 			{
 				document.location.href = 'https://konradzaba.github.io/wedding/index-pl.html';
 			}
-		}		
+		}	*/	
 		document.getElementById('walk').addEventListener('ended',deleteVideo,false);
 		function deleteVideo(e) {
 			e.target.style.opacity = '0';
