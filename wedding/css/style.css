@@ -231,6 +231,13 @@ figure {
   color: #fff;
 }
 
+.fh5co-cover .display-tc h2 {
+  color: #fff;
+  font-size: 80px;
+  margin-bottom: 30px;
+  font-weight: 300 !important;
+}
+
 /*this one magically resolves problems with jumpting to headers*/
 [id]::before {
   content: '';
