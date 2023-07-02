@@ -5,7 +5,11 @@
   font-weight: normal;
   font-style: normal;
 }
-
+@font-face {
+    font-family: Sacramento;
+    src: url("../fonts/Sacramento-Regular.ttf");
+    font-weight: normal;
+}
 /* =======================================================
 *
 * 	Template Style 
@@ -50,6 +54,15 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Montez", cursive;
   font-weight: 400;
   margin: 0 0 30px 0;
+}
+
+.polish h1, h2, h3, h4, h5, h6 {
+	font-family: "Sacramento", cursive;
+}
+
+.polish-bold h1, h2, h3, h4, h5, h6 {
+	font-family: "Sacramento", cursive;
+	font-weight: bold;
 }
 
 figure {
