@@ -569,7 +569,6 @@ figure {
 }
 
 #fh5co-couple,
-#fh5co-countdown,
 #fh5co-groom-bride,
 #fh5co-blog-section,
 #fh5co-started,
@@ -582,7 +581,6 @@ figure {
 
 @media screen and (max-width: 768px) {
   #fh5co-couple,
-  #fh5co-countdown,
   #fh5co-groom-bride,
   #fh5co-blog-section,
   #fh5co-started,
@@ -642,28 +640,6 @@ figure {
   #fh5co-couple .amp-center {
     font-size: 40px;
   }
-}
-
-#fh5co-countdown {
-  background: #F69D9D;
-}
-
-#fh5co-countdown .countdown {
-  margin-bottom: 0;
-  font-size: 80px;
-  color: #fff;
-}
-
-#fh5co-countdown .countdown span {
-  margin: 0 30px;
-  display: inline-block;
-  font-family: "Montez", cursive;
-}
-
-#fh5co-countdown .countdown small {
-  display: block;
-  font-size: 16px;
-  font-family: "Open Sans", Arial, sans-serif;
 }
 
 .couple-wrap {
