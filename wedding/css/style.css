@@ -240,6 +240,12 @@ figure {
   visibility: hidden;
 }
 
+.menu-item-background {
+	background: lightgray !important;
+	border-radius: 10px;
+	color: black !important;
+}
+
 .fh5co-cover .display-tc h2 strong {
   font-weight: 700;
 }
