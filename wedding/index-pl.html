@@ -47,7 +47,9 @@
 	
 		<div class="fh5co-hero" data-section="home">
 			<div class="fh5co-overlay"></div>
+			<video id="walk" class="vid" src="images/ania_konrad_vid_trim.mp4" muted autoplay ></video>
 			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/ania_konrad4.jpg);">
+			
 				<div class="display-t">
 					<div class="display-tc">
 						<div class="container">
@@ -265,6 +267,15 @@
 	<!-- Google Map -->
 	<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>-->
 	<!-- jQuery -->
+	<script>
+	document.getElementById('walk').addEventListener('ended',deleteVideo,false);
+	function deleteVideo(e) {
+	//e.target.fadeOut(1000)
+	e.target.style.opacity = '0';
+setTimeout(() => e.target.remove(), 1000);
+	  //e.target.parentNode.removeChild(e.target)
+	}
+	</script>
 	<script src="dist/scripts.min.js"></script>
 	</body>
 </html>
