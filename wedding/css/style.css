@@ -238,6 +238,10 @@ figure {
   font-weight: 300 !important;
 }
 
+.not-so-bold {
+	font-weight: 500;
+}
+
 .fh5co-cover .display-tc h2 strong {
   font-weight: 700;
 }
