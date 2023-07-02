@@ -173,12 +173,14 @@ figure {
 .fh5co-cover {
   background-size: cover;
   position: relative;
+  background-position-x: center !important;
 }
 
 @media screen and (max-width: 768px) {
   .fh5co-cover {
     heifght: inherit;
     padding: 3em 0;
+	background-position-x: center !important;
   }
 }
 
