@@ -1281,3 +1281,14 @@ figure {
 }
 
 .ignore-css{all:unset;}
+
+.rsvpCenterButton {
+	float: inherit;
+	display: inline-block;
+	border: 2px solid white !important;
+	opacity: 0.6;
+	background: gray !important;
+}
+.rsvpCenterButton-color {
+	background: gray !important;
+}
