@@ -1292,3 +1292,8 @@ figure {
 .rsvpCenterButton-color {
 	background: gray !important;
 }
+
+.flowers-background {
+	background-blend-mode: lighten;
+	background-color: rgba(255,255,255,0.3);
+}

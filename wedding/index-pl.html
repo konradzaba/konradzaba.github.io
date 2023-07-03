@@ -82,9 +82,9 @@
 						<ul class="sf-menu" id="fh5co-primary-menu">
 							<li><a href="#intro">Wstęp</a></li>
 							<li><a href="#venue">Miejsce</a></li>
-							<li><a href="">Harmonogram</a></li>
-							<li><a href="">RSVP</a></li>
-							<li><a href="">Podróż</a></li>
+							<li><a href="#schedule">Harmonogram</a></li>
+							<li><a href="#rsvp">RSVP</a></li>
+							<li><a href="#travel">Podróż</a></li>
 							<li><a href="index.html" onclick="localStorage.setItem('itemClicked', 'true');">English</a></li>
 							<li class="menu-item-background"><a href="index-pl.html" onclick="localStorage.setItem('itemClicked', 'true');">Polski</a></li>
 							<!--<li>
@@ -177,7 +177,7 @@
 				<div class="row row-bottom-padded-md">
 					<div class="col-md-6 text-center animate-box">
 						<div class="wedding-events">
-							<div class="ceremony-bg" style="background-image: url(images/kolegiata.jpg);"></div>
+							<div class="ceremony-bg" style="background-image: url(images/kolegiata2.jpg);"></div>
 							<div class="desc">
 								<h3>Ceremonia Ślubna</h3>
 								<p><strong>Sobota, 9 Września 2023, 16:00 @ Uniwersytecka Kolegiata Św. Anny</strong></p>
@@ -187,7 +187,7 @@
 					</div>
 					<div class="col-md-6 text-center animate-box">
 						<div class="wedding-events">
-							<div class="ceremony-bg" style="background-image: url(images/willa-fryderyka.jpg);"></div>
+							<div class="ceremony-bg" style="background-image: url(images/willa1.jpg);"></div>
 							<div class="desc">
 								<h3>Przyjęcie Weselne</h3>
 								<p><strong>Sobota, 9 Września 2023, 17:00 @ Restauracja Willa Fryderyka</strong></p>
@@ -198,51 +198,68 @@
 				</div>
 			</div>
 		</div>
-
-		<div id="fh5co-started" style="background-image:url(images/flowers.jpg);" data-stellar-background-ratio="0.5">
 		
-		<center>
-		<div class="row animate-box">
-			<div class="col-md-8 col-md-offset-2 text-center heading-section">
-							<h2>Czy weźmiesz udział?</h2>
-							<p>Proszę wypełnij formularz, aby powiadomić nas, że bierzesz udział.
+		<div id="fh5co-couple" class="fh5co-section-gray">
+			<div class="container" >
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+						<h2 id="schedule">Schedule</h2>
+						<p>Lorem ipsum etc.</p>
+					</div>
+				</div>
 			</div>
-			</div>
-		<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd1CxvNBN-72S08lBFuCvduBzpj5EA_6YBIn1C8XT00VHur-g/viewform?embedded=true" width="640" height="1570" frameborder="0" marginheight="0" marginwidth="0">Ładuję…</iframe></center>
+		</div>
 		
-		
-		
-		
-			<!--<div class="container">
+		<div class="overlay flowers-background" id="fh5co-started" style="background-image:url(images/flowers.jpg);" data-stellar-background-ratio="0.5">
+			<center>
 				<div class="row animate-box">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section">
-						<h2>Are You Attending?</h2>
-						<p>Please Fill-up the form to notify you that you're attending. Thanks.
+						<h2 id="rsvp">Czy weźmiesz udział?</h2>
+									<p>Proszę wypełnij formularz, aby powiadomić nas, że bierzesz udział.</p>
+						<div class="col-md-4 col-sm-4"></div>
+						<div class="col-md-4 col-sm-4 rsvpCenterButton">
+							<a href="https://forms.gle/sUigddyJfPpR1bRe6">
+								<button type="submit" class="btn btn-primary btn-block rsvpCenterButton-color">RSVP</button>
+							</a>
+						</div>
+						<div class="col-md-4 col-sm-4"></div>
 					</div>
 				</div>
-				
-				<div class="row animate-box">
-					<div class="col-md-10 col-md-offset-1">
-						<form class="form-inline">
-							<div class="col-md-4 col-sm-4">
-								<div class="form-group">
-									<label for="name" class="sr-only">Name</label>
-									<input type="name" class="form-control" id="name" placeholder="Name">
-								</div>
-							</div>
-							<div class="col-md-4 col-sm-4">
-								<div class="form-group">
-									<label for="email" class="sr-only">Email</label>
-									<input type="email" class="form-control" id="email" placeholder="Email">
-								</div>
-							</div>
-							<div class="col-md-4 col-sm-4">
-								<button type="submit" class="btn btn-primary btn-block">I am Attending</button>
-							</div>
-						</form>
+			</center>
+		</div>
+		
+		<div id="fh5co-when-where" class="fh5co-section-gray">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+						<h2 id="travel">Travel</h2>
+						<p>Lorem ipsum </p>
+						<iframe src="https://www.google.com/maps/d/embed?mid=1YgvQcBsZLoP0A9TDQPlGhtOOQAk_D9c&ehbc=2E312F" width="640" height="480"></iframe>
 					</div>
 				</div>
-			</div>-->
+				<!--<div class="row row-bottom-padded-md">
+					<div class="col-md-6 text-center animate-box">
+						<div class="wedding-events">
+							<div class="ceremony-bg" style="background-image: url(images/kolegiata.jpg);"></div>
+							<div class="desc">
+								<h3>Wedding Ceremony</h3>
+								<p><strong>Saturday, July 9, 2023, 16:00 CET @ Uniwersytecka Kolegiata Św. Anny</strong></p>
+								
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 text-center animate-box">
+						<div class="wedding-events">
+							<div class="ceremony-bg" style="background-image: url(images/willa-fryderyka.jpg);"></div>
+							<div class="desc">
+								<h3>Wedding Reception</h3>
+								<p><strong>Saturday, July 9, 2023, 17:00 CET @ Restauracja Willa Fryderyka</strong></p>
+								
+							</div>
+						</div>
+					</div>
+				</div>-->
+			</div>
 		</div>
 		
 		<footer>
