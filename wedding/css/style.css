@@ -1297,3 +1297,12 @@ figure {
 	background-blend-mode: lighten;
 	background-color: rgba(255,255,255,0.3);
 }
+
+iframe {
+    display: block;
+    background: #000;
+    border: none;
+    height: calc(100vh - 30px);
+    width: 100%;
+	max-height: 600px;
+}
