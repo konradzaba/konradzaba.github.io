@@ -744,10 +744,9 @@ figure {
 #fh5co-started .form-control:focus {
   background: rgba(255, 255, 255, 0.3);
 }
-
+/*
 #fh5co-started .btn-block {
   height: 54px;
-  border: none !important;
   background: #F69D9D;
   color: #fff;
   font-size: 16px;
@@ -755,7 +754,7 @@ figure {
   font-weight: 400;
   padding-left: 50px;
   padding-right: 50px;
-}
+}*/
 
 #fh5co-started .form-inline .form-group {
   width: 100% !important;
@@ -947,8 +946,8 @@ figure {
 .btn.btn-primary {
   background: #F69D9D;
   color: #fff;
-  border: none !important;
-  border: 2px solid transparent !important;
+  /*border: none !important;
+  border: 2px solid transparent !important;*/
 }
 
 .btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:focus {
@@ -1285,12 +1284,12 @@ figure {
 .rsvpCenterButton {
 	float: inherit;
 	display: inline-block;
-	border: 2px solid white !important;
 	opacity: 0.6;
-	background: gray !important;
 }
+
 .rsvpCenterButton-color {
 	background: gray !important;
+	border: 2px solid white !important;
 }
 
 .flowers-background {
