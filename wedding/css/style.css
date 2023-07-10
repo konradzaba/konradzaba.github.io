@@ -1288,12 +1288,12 @@ figure {
 .rsvpCenterButton {
 	float: inherit;
 	display: inline-block;
-	opacity: 0.6;
 }
 
 .rsvpCenterButton-color {
-	background: gray !important;
+	background: #F69D9D !important;
 	border: 2px solid white !important;
+	font-weight: bold;
 }
 
 .flowers-background {
