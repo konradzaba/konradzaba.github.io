@@ -1309,3 +1309,22 @@ iframe {
     width: 100%;
 	max-height: 600px;
 }
+
+@media screen and (max-width: 500px)
+{
+    // insert here your custom styles
+	#hawelka img { 
+	/*display: none !important;*/ 
+	width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    float: none;
+	margin: 0 0 15px 0 !important;
+	}
+    img#hawelka {
+    /*display: none !important;*/
+	width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    float: none;
+	margin: 0 0 15px 0 !important;
+  }
+}
