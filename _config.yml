@@ -49,6 +49,7 @@ include:
 #   - vendor/ruby/
 
 # Plugins (previously gems:)
+url: "https://konradzaba.github.io"
 plugins:
   - jekyll-paginate
   - jekyll-sitemap

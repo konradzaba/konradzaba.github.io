@@ -1,7 +1,7 @@
 ---
 title: "Hangfire with multi level priority queues"
 date: 2024-12-23 22:00:00 +0100
-#classes: wide
+classes: wide
 header:
   image: assets/images/default-header.png
 categories:
