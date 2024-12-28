@@ -78,7 +78,8 @@ I’ve prepared a code sample that includes both the simplest console applicatio
 
 ![Hangfire dashboard - enqueued jobs]({{ site.url }}/images\2024-23-12-hangfire/queues.png){: .align-center}
 
-You can find this code sample on my [GitHub Page](https://github.com/konradzaba/HangfireMultilevelQueues): [HangfireMultilevelQueues](https://github.com/konradzaba/HangfireMultilevelQueues)
+You can find this code sample on my [GitHub Page](https://github.com/konradzaba/HangfireMultilevelQueues):
+
 <!-- https://lab.lepture.com/github-cards/#konradzaba/HangfireMultilevelQueues|default -->
 <div class="github-card" data-github="konradzaba/HangfireMultilevelQueues" data-width="400" data-height="" data-theme="default"></div>
 <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
